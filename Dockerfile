@@ -17,6 +17,8 @@ RUN apk update && apk add \
 
 RUN pip install speedtest
 
+# testing
+
 # remove default content
 RUN rm -R /var/www/*
 
