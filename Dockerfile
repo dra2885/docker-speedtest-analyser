@@ -12,8 +12,10 @@ RUN apk update && apk add \
   nginx \
   nginx-mod-http-lua \
   python3 \
-  py-pip
-
+  py-pip \
+  gnupg1 \
+  apt-transport-https \
+  dirmngr
 
 RUN pip install speedtest
 
