@@ -1,23 +1,17 @@
-FROM alpine:3.9
+FROM debian:jessie-slim
 
 # greet me :)
 MAINTAINER Tobias Rös - <roes@amicaldo.de>
 
 # install dependencies
-RUN apk update && apk add \
-  bash \
-  git \
-  nodejs \
-  nodejs-npm \
-  nginx \
-  nginx-mod-http-lua \
-  python3 \
-  py-pip \
+RUN apt-get update && apt-get install -y \
   gnupg1 \
+  dirmngr \
   apt-transport-https \
-  dirmngr
+  python3 \
+  py-pip 
 
-RUN pip install speedtest
+RUN install speedtest
 
 # remove default content
 RUN rm -R /var/www/*
